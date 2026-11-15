@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>מול היער · פונדק הג'חנון – תפריט</title>
+<meta name="description" content="התפריט של מול היער – פונדק הג'חנון, מסעדה ואירוח כפרי בבית לחם הגלילית">
+<meta name="theme-color" content="#e9e8d9">
+<meta property="og:title" content="מול היער · פונדק הג'חנון – תפריט">
+<meta property="og:description" content="מסעדה ואירוח כפרי – בית לחם הגלילית">
+<meta property="og:image" content="https://mulhayar.github.io/icon.png">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=Secular+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#e9e8d9; --paper:#f7f5ec; --ink:#3d2a16; --brown:#4a3219; --muted:#7a6a55;
+  --orange:#c9531f; --green:#66843d; --forest:#3b4a33; --leaf:#8cc63f; --line:#d9d4bf;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth;scroll-padding-top:118px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Heebo,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.45}
+img{display:block;max-width:100%}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+
+/* header */
+header.top{padding:26px 0 10px;text-align:center}
+header.top .logo{width:min(220px,58vw);height:auto;margin:0 auto}
+.welcome{font-family:"Secular One",Heebo,sans-serif;color:var(--brown);font-size:15px;margin:10px 0 0;opacity:.85}
+
+/* venue switch */
+.venue{display:flex;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:5px;margin:16px auto 0;max-width:420px}
+.venue button{flex:1;border:0;background:transparent;font:700 15px Heebo,sans-serif;color:var(--brown);padding:10px 8px;border-radius:999px;cursor:pointer}
+.venue button[aria-selected="true"]{background:var(--brown);color:#fff8ec;box-shadow:0 2px 8px rgba(74,50,25,.25)}
+
+/* sticky chips */
+nav.chips{position:sticky;top:0;z-index:20;background:rgba(233,232,217,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);margin-top:14px}
+nav.chips .row{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;scrollbar-width:none;max-width:720px;margin:0 auto}
+nav.chips .row::-webkit-scrollbar{display:none}
+nav.chips a{flex:none;text-decoration:none;color:var(--brown);background:var(--paper);border:1px solid var(--line);padding:7px 14px;border-radius:999px;font-weight:700;font-size:14px;white-space:nowrap}
+nav.chips a.on{background:var(--c,var(--brown));border-color:var(--c,var(--brown));color:#fff}
+
+/* sections */
+section.cat{margin:22px 0 8px}
+.cat-head{background:var(--c);color:#fff;border-radius:18px 18px 0 0;padding:16px 18px 14px;text-align:center;position:relative}
+.cat-head h2{margin:0;font-family:"Secular One",Heebo,sans-serif;font-weight:400;font-size:27px;letter-spacing:.3px}
+.cat-head h2 .orn{opacity:.75;font-size:.7em;vertical-align:middle;margin:0 8px}
+.cat-head p{margin:6px 0 0;font-size:14px;opacity:.92}
+.cat-body{background:var(--paper);border-radius:0 0 18px 18px;padding:6px 14px 12px;box-shadow:0 1px 0 var(--line)}
+.sub{display:inline-block;margin:14px 0 2px;background:var(--orange);color:#fff;font-weight:800;font-size:13px;padding:3px 14px;clip-path:polygon(8px 0,calc(100% - 8px) 0,100% 50%,calc(100% - 8px) 100%,8px 100%,0 50%)}
+
+/* item */
+.item{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px dashed var(--line)}
+.item:last-child{border-bottom:0}
+.item .txt{flex:1;min-width:0}
+.item .nm{display:flex;align-items:baseline;gap:8px}
+.item h3{margin:0;font-size:17px;font-weight:800;color:var(--brown)}
+.item h3 small{font-weight:500;font-size:13px;color:var(--muted)}
+.item .dots{flex:1;border-bottom:2px dotted #c8bfa5;transform:translateY(-4px);min-width:12px}
+.item .pr{font-weight:800;color:var(--orange);font-size:17px;white-space:nowrap}
+.item .pr .s{font-size:.8em;margin-inline-start:1px}
+.item .ds{margin:3px 0 0;color:var(--muted);font-size:14px}
+.item ul.opts{margin:6px 0 0;padding:0;list-style:none;font-size:14px;color:var(--ink)}
+.item ul.opts li{padding:1px 0}
+.item ul.opts b{color:var(--brown)}
+.prices{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.prices span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:13px;color:var(--muted)}
+.prices span b{color:var(--orange);font-size:14px}
+.leaf{display:inline-block;width:14px;height:14px;vertical-align:-1px;margin-inline-start:4px}
+.ph{flex:none;width:96px;height:96px;border-radius:16px;background:#fff;overflow:hidden;cursor:zoom-in;border:1px solid #ece7d6;position:relative;padding:0}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.ill{background:#efe9d6;cursor:default}
+.ph.ill svg{width:100%;height:100%}
+.addon{display:flex;gap:8px;align-items:baseline;padding:8px 0;font-size:14px;color:var(--ink)}
+.addon .dots{flex:1;border-bottom:2px dotted #c8bfa5;transform:translateY(-4px)}
+.addon b.p{color:var(--orange)}
+.note{font-size:13px;color:var(--muted);background:#fff;border-radius:10px;padding:8px 12px;margin:10px 0 4px;border:1px solid var(--line)}
+
+/* about */
+.about{margin:30px 0 10px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px 20px;text-align:center}
+.about h2{font-family:"Secular One",Heebo,sans-serif;font-weight:400;color:var(--brown);margin:0 0 8px;font-size:26px}
+.about p{margin:0;font-size:15px;color:var(--ink)}
+.legend{display:flex;justify-content:center;align-items:center;gap:6px;color:var(--muted);font-size:13px;margin:18px 0 0}
+footer{text-align:center;padding:26px 16px 40px;color:var(--muted);font-size:13px}
+footer img{width:140px;height:auto;margin:0 auto 10px;opacity:.9}
+
+/* truck hero */
+.truck-hero{margin-top:18px;background:#2e2b29;color:#fff;border-radius:22px;padding:22px 16px;text-align:center}
+.truck-hero .t1{font-family:"Secular One",Heebo,sans-serif;font-size:30px;line-height:1}
+.truck-hero .t2{font-weight:800;letter-spacing:3px;font-size:13px;opacity:.9;margin-top:6px}
+.truck-hero .t3{display:inline-block;margin-top:10px;color:#f08a52;font-weight:800}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(30,20,10,.82);display:none;align-items:center;justify-content:center;z-index:50;padding:20px}
+.lb.open{display:flex}
+.lb figure{margin:0;background:#fff;border-radius:20px;overflow:hidden;max-width:520px;width:100%}
+.lb img{width:100%;max-height:70vh;object-fit:contain;background:#fff}
+.lb figcaption{padding:12px 16px;display:flex;justify-content:space-between;font-weight:800;color:var(--brown)}
+.lb figcaption span:last-child{color:var(--orange)}
+.lb button{position:absolute;top:14px;left:14px;width:42px;height:42px;border-radius:50%;border:0;background:#fff;font-size:22px;color:var(--brown);cursor:pointer}
+.hidden{display:none!important}
+@media (min-width:600px){ .ph{width:112px;height:112px} .item h3{font-size:18px} }
+</style>
+</head>
+<body>
+
+<header class="top wrap">
+  <img class="logo" src="logo.webp" alt="מול היער – פונדק הג'חנון, מסעדה ואירוח כפרי" width="700" height="565">
+  <p class="welcome">כייף שבאתם! · בתיאבון</p>
+  <div class="venue" role="tablist">
+    <button role="tab" aria-selected="true" data-v="rest">תפריט המסעדה</button>
+    <button role="tab" aria-selected="false" data-v="truck">עגלת הנקניקיות</button>
+  </div>
+</header>
+
+<nav class="chips" aria-label="קטגוריות"><div class="row" id="chips"></div></nav>
+
+<main class="wrap">
+  <div id="truckHero" class="truck-hero hidden">
+    <div class="t1">Delicious</div>
+    <div class="t2">HOT DOGS</div>
+    <div class="t3">~ תפריט העגלה ~</div>
+  </div>
+  <div id="menu"></div>
+
+  <div class="legend"><span id="leafLegend"></span> מנה טבעונית / צמחונית</div>
+
+  <section class="about">
+    <h2>כייף שבאתם!</h2>
+    <p>עד שתזמינו... נספר לכם קצת על בית לחם הגלילית.<br>
+    מקור השם מגיע מעיר קומה הנזכרת בנחלת שבט זבולון בספר יהושע. בתקופת התלמוד נודעה בתעשיית כדי החרס שלה.<br>
+    בית לחם נוסדה בשנת 1948 על אדמות המושבה הגרמנית הנטושה, שנקראה באותו שם ע״י חברי ארגון ׳החורש׳ מאוסטריה.
+    המושבה הגרמנית המקורית נוסדה בשנת 1906 בידי נוצרים טמפלרים מגרמניה. שטחה כ־4000 דונם וענפי הכלכלה העיקריים במושב הם חקלאות ותיירות.<br>
+    מבנה המסעדה שימש בעבר את הנפח המקומי וכיום מתגוררת בו משפחת ילין.</p>
+  </section>
+</main>
+
+<footer>
+  <img src="logo.webp" alt="" width="700" height="565" loading="lazy">
+  המחירים בש״ח וכוללים מע״מ · ייתכנו שינויים במחירים ובזמינות המנות
+</footer>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <button aria-label="סגירה">✕</button>
+  <figure><img alt=""><figcaption><span></span><span></span></figcaption></figure>
+</div>
+
+<script>
+/* ---------- תמונות ---------- */
+const REMOTE = "https://netlunch.cloud/images/Pundak_Jahnun/";
+const LOCAL_IMAGES = false; // true = התמונות שמורות בתיקיית img באתר עצמו
+const remoteSrc = (n,ext) => REMOTE + String(n).padStart(7,"0") + "." + ext;
+const P = n => ({n:String(n).replace(/j$/,''), ext:/j$/.test(String(n))?'jpeg':'png'});
+
+/* ---------- איורים לפריטים בלי תמונה ---------- */
+const S='stroke="#4a3219" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"';
+const ILL = {
+latte:`<svg viewBox="0 0 120 120"><ellipse cx="60" cy="100" rx="34" ry="5" fill="#d9cfb4"/><path d="M38 30h44l-5 66H43z" fill="#fff" ${S}/><path d="M40.5 58h39l-3 38H43.5z" fill="#9a6a3c"/><path d="M39.6 46h40.8l-.9 12H40.5z" fill="#c99a68"/><path d="M38.8 34h42.4l-.8 12H39.6z" fill="#f6efe0"/><path d="M38 30h44l-5 66H43z" fill="none" ${S}/><path d="M55 40c2-3 5-3 5 0 0-3 3-3 5 0-1 3-5 5-5 5s-4-2-5-5z" fill="#c99a68"/></svg>`,
+macchiato:`<svg viewBox="0 0 120 120"><ellipse cx="60" cy="88" rx="38" ry="9" fill="#fff" ${S}/><path d="M36 52h48v14a24 22 0 0 1-48 0z" fill="#fff" ${S}/><path d="M84 58c12 0 12 14 0 14" fill="none" ${S}/><ellipse cx="60" cy="52" rx="24" ry="6" fill="#9a6a3c" ${S}/><path d="M48 51c3-9 21-9 24 0-6 3-18 3-24 0z" fill="#f6efe0" ${S}/><path d="M52 34c-3-5 3-8 0-13M62 32c-3-5 3-8 0-13" fill="none" stroke="#b3a68a" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+tea:`<svg viewBox="0 0 120 120"><ellipse cx="58" cy="98" rx="36" ry="5" fill="#d9cfb4"/><path d="M30 50h56v26a28 22 0 0 1-56 0z" fill="#fff" ${S}/><path d="M33 60h50v16a25 18 0 0 1-50 0z" fill="#b8402c" opacity=".9"/><path d="M30 50h56v26a28 22 0 0 1-56 0z" fill="none" ${S}/><path d="M86 56c14 0 14 18 0 18" fill="none" ${S}/><circle cx="48" cy="76" r="5" fill="#7a1f2b"/><circle cx="60" cy="82" r="4" fill="#e0a12b"/><circle cx="70" cy="74" r="4.5" fill="#7a1f2b"/><path d="M44 40c-3-6 4-9 0-16M58 38c-3-6 4-9 0-16M72 40c-3-6 4-9 0-16" fill="none" stroke="#b3a68a" stroke-width="2.5" stroke-linecap="round"/></svg>`,
+ipa:`<svg viewBox="0 0 120 120"><ellipse cx="60" cy="102" rx="26" ry="4" fill="#d9cfb4"/><path d="M40 34h40l-4 64H44z" fill="#e39a2d"/><path d="M38 24c4-8 14-6 16-2 4-6 14-5 16 0 6-2 12 2 10 10H40c-6 0-6-6-2-8z" fill="#fffaf0" ${S}/><path d="M40 34h40l-4 64H44z" fill="none" ${S}/><path d="M50 50v38M60 46v44" stroke="#f6c46a" stroke-width="3" stroke-linecap="round" opacity=".8"/><g transform="translate(86 60)"><path d="M0-14c8 4 8 16 0 22-8-6-8-18 0-22z" fill="#8cc63f" ${S}/><path d="M0-6v12" stroke="#4a3219" stroke-width="2"/></g></svg>`,
+limonarak:`<svg viewBox="0 0 120 120"><ellipse cx="60" cy="102" rx="24" ry="4" fill="#d9cfb4"/><path d="M42 22h36l-4 76H46z" fill="#f4ecb0"/><path d="M42 22h36l-4 76H46z" fill="none" ${S}/><circle cx="76" cy="26" r="13" fill="#f2d03b" ${S}/><path d="M76 13v26M63 26h26M67 17l18 18M85 17L67 35" stroke="#fff6c8" stroke-width="2"/><path d="M50 30c-10-8-4-18 6-12 0 8-2 10-6 12z" fill="#7fb241" ${S}/><path d="M66 18l-8 74" stroke="#4a3219" stroke-width="3" stroke-linecap="round"/><rect x="50" y="52" width="9" height="9" rx="2" fill="#fff" opacity=".8" transform="rotate(12 54 56)"/><rect x="58" y="70" width="9" height="9" rx="2" fill="#fff" opacity=".8" transform="rotate(-10 62 74)"/></svg>`,
+shot:`<svg viewBox="0 0 120 120"><ellipse cx="60" cy="96" rx="26" ry="4" fill="#d9cfb4"/><path d="M42 44h36l-5 50H47z" fill="#fff" ${S}/><path d="M43.6 58h32.8l-3.4 36H47z" fill="#e8f0f2"/><path d="M42 44h36l-5 50H47z" fill="none" ${S}/><g transform="translate(60 26)" fill="#9a5b2e" stroke="#4a3219" stroke-width="2" stroke-linejoin="round"><path d="M0-12l3 8 8-2-5 6 5 6-8-2-3 8-3-8-8 2 5-6-5-6 8 2z"/></g></svg>`,
+pickles:`<svg viewBox="0 0 120 120"><ellipse cx="60" cy="104" rx="30" ry="4" fill="#d9cfb4"/><rect x="36" y="20" width="48" height="12" rx="3" fill="#c9531f" ${S}/><path d="M38 32h44c4 0 6 3 6 7v54c0 5-3 8-8 8H40c-5 0-8-3-8-8V39c0-4 2-7 6-7z" fill="#eef3d8" ${S}/><g ${S} fill="#6f9a39"><rect x="40" y="44" width="11" height="48" rx="5.5"/><rect x="54" y="40" width="11" height="52" rx="5.5"/><rect x="68" y="46" width="11" height="46" rx="5.5"/></g><path d="M45 54v6M59 52v8M73 58v6M45 72v6M59 70v8M73 76v6" stroke="#cfe39b" stroke-width="2" stroke-linecap="round"/></svg>`,
+watermelon:`<svg viewBox="0 0 120 120"><ellipse cx="60" cy="96" rx="40" ry="5" fill="#d9cfb4"/><path d="M14 46h92a46 46 0 0 1-92 0z" fill="#5c8f2e" ${S}/><path d="M22 46h76a38 38 0 0 1-76 0z" fill="#f3f0c9"/><path d="M26 46h68a34 34 0 0 1-68 0z" fill="#e2443c"/><path d="M14 46h92a46 46 0 0 1-92 0z" fill="none" ${S}/><g fill="#2b1d10"><ellipse cx="44" cy="56" rx="2.2" ry="3.4"/><ellipse cx="60" cy="62" rx="2.2" ry="3.4"/><ellipse cx="76" cy="56" rx="2.2" ry="3.4"/><ellipse cx="52" cy="70" rx="2.2" ry="3.4"/><ellipse cx="68" cy="70" rx="2.2" ry="3.4"/></g></svg>`,
+cookies:`<svg viewBox="0 0 120 120"><ellipse cx="60" cy="98" rx="40" ry="5" fill="#d9cfb4"/><circle cx="46" cy="66" r="26" fill="#d8a35d" ${S}/><circle cx="76" cy="58" r="26" fill="#c98f47" ${S}/><g fill="#4a3219"><circle cx="66" cy="50" r="3.5"/><circle cx="82" cy="46" r="3"/><circle cx="86" cy="64" r="3.5"/><circle cx="72" cy="68" r="3"/><circle cx="36" cy="62" r="3.2"/><circle cx="44" cy="78" r="3.5"/><circle cx="52" cy="66" r="2.8"/></g><path d="M58 42c4-2 8-2 10 0" stroke="#f3e3c3" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>`,
+kubaneh:`<svg viewBox="0 0 120 120"><ellipse cx="60" cy="100" rx="42" ry="6" fill="#d9cfb4"/><path d="M22 66h76v18c0 8-8 12-16 12H38c-8 0-16-4-16-12z" fill="#6b6f72" ${S}/><path d="M16 66h88" ${S}/><path d="M26 66c0-28 14-40 34-40s34 12 34 40z" fill="#d48a3a" ${S}/><path d="M40 62c2-16 8-24 20-26M60 62c0-14 6-22 16-24" fill="none" stroke="#a9641f" stroke-width="3" stroke-linecap="round"/><path d="M46 38c6-4 14-5 20-3" stroke="#f0c07c" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="88" cy="40" rx="8" ry="10" fill="#fff" ${S}/><path d="M84 40a4 5 0 1 0 8 0" fill="#f2c230"/></svg>`,
+kebab:`<svg viewBox="0 0 120 120"><ellipse cx="60" cy="74" rx="48" ry="22" fill="#fff" ${S}/><ellipse cx="60" cy="72" rx="36" ry="14" fill="#f4efe2"/><path d="M18 60l86 0" stroke="#9b8a6c" stroke-width="2.5" stroke-linecap="round"/><path d="M18 80l86 0" stroke="#9b8a6c" stroke-width="2.5" stroke-linecap="round"/><rect x="30" y="54" width="60" height="12" rx="6" fill="#8a4b22" ${S}/><rect x="30" y="74" width="60" height="12" rx="6" fill="#9b5527" ${S}/><path d="M38 57v6M50 57v6M62 57v6M74 57v6M42 77v6M54 77v6M66 77v6M78 77v6" stroke="#5b2f12" stroke-width="2" stroke-linecap="round"/><g fill="#7fb241" stroke="#4a3219" stroke-width="2"><path d="M86 44c6-6 14-2 12 4-6 2-10 0-12-4z"/><path d="M24 92c4-7 12-6 12 0-5 3-9 3-12 0z"/></g><circle cx="94" cy="88" r="5" fill="#e2443c" stroke="#4a3219" stroke-width="2"/></svg>`
+};
+const LEAF = `<svg class="leaf" viewBox="0 0 24 24" aria-label="טבעוני/צמחוני"><path d="M20 3C9 3 4 9 4 15c0 2 .6 3.8 1.6 5.2C7 13 12 9 16 8c-4 2.5-7.5 6.5-9 12 1.2.6 2.6 1 4 1 6 0 9-6 9-18z" fill="#8cc63f"/></svg>`;
+document.getElementById('leafLegend').innerHTML = LEAF;
+
+/* ---------- נתוני התפריט ---------- */
+const BEERS = {id:"beer", t:"בירות ואלכוהול", c:"#4a3219", groups:[
+  {sub:"בקבוק", items:[
+    {n:"גולדסטאר", p:17, img:96},
+    {n:"סטלה, הייניקן, קרלסברג, טובורג", p:19, img:61}
+  ]},
+  {sub:"חבית", items:[
+    {n:"עלמה", s:"4.9% אלכוהול", opts:[["שליש",28],["חצי",33]], img:"182j"},
+    {n:"הגיבור בלונדי", s:"5.6% אלכוהול", opts:[["שליש",31],["חצי",34]], img:"183j"},
+    {n:"הגיבור IPA", s:"7.3% אלכוהול", opts:[["שליש",31],["חצי",34]], ill:"ipa"}
+  ]},
+  {sub:"משהו אחר", items:[
+    {n:"לימונערק", p:32, ill:"limonarak"},
+    {n:"סנגריה", d:"חמה / קרה (תלוי בעונה)", p:37, img:141},
+    {n:"צ'יסר ערק", p:15, ill:"shot"}
+  ]}
+]};
+
+const MENUS = {
+rest:[
+  {id:"yemen", t:"בצעד תימני", orn:"••••", c:"#c9531f", items:[
+    {n:"ג'חנון", d:"מוגש עם ביצה, רסק עגבניות וסחוג", p:29, img:11, v:1},
+    {n:"מלאווח", d:"מוגש עם ביצה, רסק עגבניות וסחוג", p:31, img:12, v:1},
+    {n:"מרק תימני אורגינל", d:"בשר בקר, תפו״א, מוגש בתוספת לאפה וחילבה", p:48, img:114},
+    {n:"לסיס", d:"חמין תימני, קטניות, תפו״א וביצה", p:48, img:110, v:1},
+    {n:"קובנית", d:"מוגש עם ביצה, רסק עגבניות, סחוג ושמנת חמוצה", p:39, ill:"kubaneh"},
+    {n:"מרק שעועית", s:"(בחורף)", p:41, img:109, v:1}
+  ], addons:[["תוספת רסק עגבניות / ביצה",3]]},
+
+  {id:"house", t:"מנות הבית", orn:"=", c:"#4a3219", items:[
+    {n:"עיסקית בשרית", p:79, img:90, opts2:[
+      ["מנה עיקרית לבחירה","קציצות ברוטב / שניצל עוף ביתי / רצועות חזה עוף בסגנון סיני"],
+      ["+ תוספת","צ'יפס / אורז / קוסקוס"],
+      ["+ שתיה קלה","תפוזים / ענבים / אשכוליות / סודה"],
+      ["+ סלט ירקות וטחינה",""]
+    ]},
+    {n:"קבב על הפלאנצ'ה", d:"בתוספת פירה / צ'יפס", p:88, ill:"kebab"},
+    {n:"שניצל וינאי", d:"בתוספת פירה / צ'יפס", p:88, img:97},
+    {n:"מנת קוסקוס עם ירקות", p:49, img:112, v:1},
+    {n:"מנת בשר ללא תוספת", p:45, img:32},
+    {n:"מנת ילדים", d:"מנה בשרית ותוספת לבחירה", p:45, img:187}
+  ], addonsTitle:"לעיסקית:", addons:[["תוספת לבירה (בקבוק)","8/12"],["תוספת לקולה / זירו / ספרייט",3]]},
+
+  {id:"breakfast", t:"בוקר כפרי", orn:"**", c:"#3b4a33", items:[
+    {n:"ארוחת בוקר יחיד", p:68, img:30, d:"חביתה משתי ביצים, סלט ירקות, לאבנה, גבינת שום, טונה, בולגרית, טחינה. בתוספת לחמניה מקמח מלא / לבן + שתיה אחת – תפוזים / לימונדה / שתיה חמה"},
+    {n:"ארוחת בוקר זוגית", p:130, img:31, d:"כל מה שבארוחת היחיד, ולבחירה בנוסף – ג'חנון / מלאווח. מוגשת בתוספת ג'בטה לבן / מלא, שתיה חמה + קרה"},
+    {n:"פרעצל חם מתנור אבן", d:"מוגש עם שמנת חמוצה, רסק עגבניות וסחוג", p:28, img:"173j", v:1}
+  ], note:"בשעות עומס ארוחת הבוקר מוגשת עד השעה 12:00"},
+
+  {id:"salads", t:"הסלטים שלנו", orn:"<<", c:"#66843d", items:[
+    {n:"עלי גפן ממולאים באורז", p:42, img:23, v:1},
+    {n:"כדורי פלאפל הבית", p:30, img:15, v:1},
+    {n:"צ'יפס", opts:[["קטן",32],["גדול",42]], img:169, v:1},
+    {n:"חומוס הבית", d:"בתוספת טחינה + גרגירים (טיפונת חריף תימני)", p:34, img:16, v:1},
+    {n:"טחינה", p:28, img:20, v:1},
+    {n:"חצילים בטחינה", p:28, img:17, v:1},
+    {n:"סלט ירקות כפרי", d:"עגבניה, מלפפון, בצל וחסה", p:39, img:18, v:1},
+    {n:"סלט כרוב", d:"חמוץ מתוק עם שומשום קלוי", p:29, img:19, v:1},
+    {n:"סלט טאבולה", p:29, img:22, v:1},
+    {n:"לאבנה", p:28, img:21},
+    {n:"חמוצים", p:8, ill:"pickles", v:1}
+  ]},
+
+  {id:"hot", t:"משהו חם לשתות?", c:"#c9531f", items:[
+    {n:"הפוך", opts:[["קטן",14],["גדול",17],["כפול",19]], ill:"latte"},
+    {n:"קפה שחור", p:12, img:166},
+    {n:"נס קפה", p:13, img:125},
+    {n:"נס על חלב", p:16, img:123},
+    {n:"תה נענע", p:13, img:122},
+    {n:"אספרסו", opts:[["רגיל",12],["כפול",15]], img:120},
+    {n:"שוקו", opts:[["חם",12],["קר",16]], img:117},
+    {n:"קפה קר", p:20, img:"172j"},
+    {n:"אמריקנו", p:12, img:121},
+    {n:"מקיאטו", p:13, ill:"macchiato"},
+    {n:"חליטת פירות חמה", p:18, ill:"tea"}
+  ]},
+
+  {id:"cold", t:"משהו קר לשתות?", c:"#66843d", items:[
+    {n:"שתיה קלה", d:"קוקה-קולה, קולה זירו, ספרייט, ספרייט זירו, פאנטה, שוופס בטעמים, ענבים, תפוזים, מנגו, אשכוליות, תפוחים, תה קר", p:13, img:41},
+    {n:"בירה שחורה", p:14, img:57},
+    {n:"כוס לימונדה", p:14, img:59},
+    {n:"קנקן לימונדה", p:33, img:"171j"},
+    {n:"סודה / מים מינרלים", p:10, img:49},
+    {n:"מיץ סחוט פרי ניב", d:"תפוזים, אשכולית אדומה", opts:[["קטן",12],["גדול",17]], img:58},
+    {n:"אייס קפה", p:24, img:"194j"}
+  ]},
+
+  {id:"desserts", t:"קינוחים", orn:"★★★", c:"#7a5230", items:[
+    {n:"פאי אגוזים", d:"טארט חמאה פריך עם תערובת אגוזים מקורמלים בתוספת כדור גלידה וניל", p:39, img:104},
+    {n:"רושה", d:"שכבת מוס שוקולד לבן ונוגט בציפוי קראנץ' לוז", p:38, img:105},
+    {n:"פאי תפוחים", d:"טארט חמאה פריך במילוי קרמל ואגוזים בתוספת כדור גלידה וניל", p:39, img:102},
+    {n:"סופלה", d:"עוגת שוקולד חמה בתוספת כדור גלידה", p:39, img:103},
+    {n:"עוגת גבינה פירורים", p:37, img:100},
+    {n:"קוקיס", d:"דואט ריבת חלב ושוקולד לבן עם עוגיות על בסיס פאדג' שוקולד", p:38, ill:"cookies"},
+    {n:"סניקרס", d:"שכבת שוקולד חלב עם קרמל מלוח ובוטנים בציפוי מגנום", p:38, img:101},
+    {n:"גלידה אמריקאית", p:14, img:158},
+    {n:"סחלב", p:20, img:126},
+    {n:"אבטיח", s:"(בעונה)", p:30, ill:"watermelon", v:1}
+  ]},
+  BEERS
+],
+truck:[
+  {id:"hotdogs", t:"נקניקיות", c:"#c9531f",
+   intro:"כל הנקניקיות עשויות מבשר עגל איכותי ומוגשות בתוספת פירה, כרוב כבוש בבירה וחרדל גרגירים", items:[
+    {n:"נקניקייה – יחידה אחת", d:"125 גרם ליחידה · צ'וריסוס / עגל עם גבינה / עגל עבה", p:39, img:28},
+    {n:"נקניקייה – 2 יחידות", d:"125 גרם ליחידה · צ'וריסוס / עגל עם גבינה / עגל עבה", p:61, img:29},
+    {n:"עסקית נקניקיות", d:"לבחירה 2 נקניקיות + 1/3 עלמה מהחבית*", p:73, img:189}
+  ], addonsTitle:"* שדרוג הבירה בעסקית:", addons:[
+    ["1/3 ליטר הגיבור בלונדי / IPA מהחבית",6],["1/2 ליטר עלמה מהחבית",8],["1/2 ליטר הגיבור בלונדי / IPA מהחבית",10]]},
+  {id:"shawarma", t:"שווארמה", c:"#4a3219",
+   intro:"בשר השווארמה עשוי מהודו נקבה ושומן כבש. כל המנות מגיעות בתוספת פירה, סלט ירקות קטן, טחינה וחצי בגט", items:[
+    {n:"צלחת אישית", p:69, img:154},
+    {n:"עסקית שווארמה", d:"צלחת אישית + 1/3 עלמה מהחבית*", p:88, img:155}
+  ], addonsTitle:"* שדרוג הבירה בעסקית:", addons:[
+    ["1/3 ליטר הגיבור בלונדי / IPA מהחבית",6],["1/2 ליטר עלמה מהחבית",8],["1/2 ליטר הגיבור בלונדי / IPA מהחבית",10]]},
+  Object.assign({}, BEERS, {id:"tbeer", c:"#2e2b29"}),
+  {id:"snack", t:"משהו לנשנש", c:"#66843d", items:[
+    {n:"פרעצל חם", d:"מתנור אבן, מוגש עם שמנת חמוצה, רסק עגבניות וסחוג", p:28, img:"173j", v:1}
+  ]}
+]};
+
+/* ---------- רינדור ---------- */
+const esc = s => String(s).replace(/[&<>"]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+const sh = '<span class="s">₪</span>';
+function priceText(it){ if(it.opts) return it.opts.map(o=>o[1]).join(' / '); return it.p; }
+function photo(it){
+  if(it.img!==undefined){
+    const {n,ext}=P(it.img);
+    return `<button class="ph" data-n="${n}" data-ext="${ext}" data-name="${esc(it.n)}" data-price="${esc(priceText(it))}" aria-label="תמונה מוגדלת – ${esc(it.n)}">
+      <img src="${LOCAL_IMAGES ? `img/${n}.jpg` : remoteSrc(n,ext)}" alt="${esc(it.n)}" loading="lazy" decoding="async" width="300" height="300"></button>`;
+  }
+  return `<div class="ph ill" aria-hidden="true">${ILL[it.ill]||''}</div>`;
+}
+function itemHTML(it){
+  const price = it.opts ? '' : `<span class="pr">${it.p} ${sh}</span>`;
+  let h = `<article class="item"><div class="txt"><div class="nm"><h3>${esc(it.n)}${it.s?` <small>${esc(it.s)}</small>`:''}${it.v?LEAF:''}</h3>${price?'<span class="dots"></span>'+price:''}</div>`;
+  if(it.d) h += `<p class="ds">${esc(it.d)}</p>`;
+  if(it.opts) h += `<div class="prices">${it.opts.map(o=>`<span>${esc(o[0])} <b>${o[1]} ₪</b></span>`).join('')}</div>`;
+  if(it.opts2) h += `<ul class="opts">${it.opts2.map(o=>`<li><b>${esc(o[0])}</b>${o[1]?' – '+esc(o[1]):''}</li>`).join('')}</ul>`;
+  return h + `</div>${photo(it)}</article>`;
+}
+function sectionHTML(sec){
+  const orn = sec.orn ? `<span class="orn">${esc(sec.orn)}</span>` : '';
+  let body = '';
+  if(sec.groups) sec.groups.forEach(g=>{ body += `<span class="sub">${esc(g.sub)}</span>` + g.items.map(itemHTML).join(''); });
+  else body = sec.items.map(itemHTML).join('');
+  if(sec.addons){
+    body += (sec.addonsTitle?`<div class="note" style="margin-bottom:0"><b>${esc(sec.addonsTitle)}</b></div>`:'') +
+      sec.addons.map(a=>`<div class="addon"><span>${esc(a[0])}</span><span class="dots"></span><b class="p">${a[1]} ₪</b></div>`).join('');
+  }
+  if(sec.note) body += `<div class="note">${esc(sec.note)}</div>`;
+  return `<section class="cat" id="${sec.id}" style="--c:${sec.c}">
+    <div class="cat-head"><h2>${orn}${esc(sec.t)}${orn}</h2>${sec.intro?`<p>${esc(sec.intro)}</p>`:''}</div>
+    <div class="cat-body">${body}</div></section>`;
+}
+let current = 'rest';
+function render(v){
+  current = v;
+  const secs = MENUS[v];
+  document.getElementById('menu').innerHTML = secs.map(sectionHTML).join('');
+  document.getElementById('chips').innerHTML = secs.map(s=>`<a href="#${s.id}" style="--c:${s.c}">${esc(s.t.replace('?',''))}</a>`).join('');
+  document.getElementById('truckHero').classList.toggle('hidden', v!=='truck');
+  document.querySelectorAll('.venue button').forEach(b=>b.setAttribute('aria-selected', b.dataset.v===v));
+  // תמונות: עותק מקומי / ההד אופיס, ואם התמונה לא נטענת – מציגים את סמל העצים
+  document.querySelectorAll('.ph img').forEach(img=>{
+    img.addEventListener('error', function onErr(){
+      const b = img.closest('.ph');
+      if(LOCAL_IMAGES && !img.dataset.remote){ img.dataset.remote=1; img.src = remoteSrc(b.dataset.n, b.dataset.ext); }
+      else { b.className='ph ill'; b.innerHTML='<img src="icon.png" alt="" style="opacity:.55;padding:14px">'; }
+    });
+  });
+  observe();
+}
+document.querySelectorAll('.venue button').forEach(b=>b.addEventListener('click',()=>{
+  render(b.dataset.v); history.replaceState(null,'', b.dataset.v==='truck'?'#truck':location.pathname);
+  window.scrollTo({top:0});
+}));
+
+/* הדגשת קטגוריה פעילה */
+let io;
+function observe(){
+  if(io) io.disconnect();
+  const chips = [...document.querySelectorAll('#chips a')];
+  io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){
+      chips.forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+e.target.id));
+      const on = chips.find(a=>a.classList.contains('on')); if(on) on.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+    }});
+  },{rootMargin:'-120px 0px -65% 0px'});
+  document.querySelectorAll('section.cat').forEach(s=>io.observe(s));
+}
+
+/* לייטבוקס */
+const lb = document.getElementById('lb');
+document.addEventListener('click', e=>{
+  const b = e.target.closest('.ph:not(.ill)');
+  if(b){ const src = b.querySelector('img').currentSrc || b.querySelector('img').src;
+    lb.querySelector('img').src = src; lb.querySelector('img').alt = b.dataset.name;
+    const caps = lb.querySelectorAll('figcaption span'); caps[0].textContent = b.dataset.name; caps[1].textContent = b.dataset.price + ' ₪';
+    lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); return; }
+  if(lb.classList.contains('open') && (e.target===lb || e.target.closest('.lb button'))){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); }
+});
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') lb.classList.remove('open'); });
+
+render(location.hash==='#truck' ? 'truck' : 'rest');
+</script>
+</body>
+</html>
