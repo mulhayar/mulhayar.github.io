@@ -20,7 +20,7 @@
   --orange:#c9531f; --green:#66843d; --forest:#3b4a33; --leaf:#8cc63f; --line:#d9d4bf;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth;scroll-padding-top:118px}
+html{scroll-padding-top:70px}
 body{margin:0;background:var(--cream);color:var(--ink);font-family:Heebo,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.45}
 img{display:block;max-width:100%}
 .wrap{max-width:720px;margin:0 auto;padding:0 16px}
@@ -332,7 +332,7 @@ function render(v){
   current = v;
   const secs = MENUS[v];
   document.getElementById('menu').innerHTML = secs.map(sectionHTML).join('');
-  document.getElementById('chips').innerHTML = secs.map(s=>`<a href="#${s.id}" style="--c:${s.c}">${esc(s.t.replace('?',''))}</a>`).join('');
+  document.getElementById('chips').innerHTML = secs.map(s=>`<a href="#${s.id}" data-id="${s.id}" style="--c:${s.c}">${esc(s.t.replace('?',''))}</a>`).join('');
   document.getElementById('truckHero').classList.toggle('hidden', v!=='truck');
   document.querySelectorAll('.venue button').forEach(b=>b.setAttribute('aria-selected', b.dataset.v===v));
   // תמונות: עותק מקומי / ההד אופיס, ואם התמונה לא נטענת – מציגים את סמל העצים
@@ -350,19 +350,52 @@ document.querySelectorAll('.venue button').forEach(b=>b.addEventListener('click'
   window.scrollTo({top:0});
 }));
 
-/* הדגשת קטגוריה פעילה */
-let io;
-function observe(){
-  if(io) io.disconnect();
-  const chips = [...document.querySelectorAll('#chips a')];
-  io = new IntersectionObserver(es=>{
-    es.forEach(e=>{ if(e.isIntersecting){
-      chips.forEach(a=>a.classList.toggle('on', a.getAttribute('href')==='#'+e.target.id));
-      const on = chips.find(a=>a.classList.contains('on')); if(on) on.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
-    }});
-  },{rootMargin:'-120px 0px -65% 0px'});
-  document.querySelectorAll('section.cat').forEach(s=>io.observe(s));
+/* ניווט בין קטגוריות + הדגשת הקטגוריה הפעילה
+   (גלילה אופקית של שורת הכפתורים בלבד – בלי להזיז את העמוד) */
+const nav = document.querySelector('nav.chips');
+const row = document.getElementById('chips');
+let activeId = null, lockUntil = 0, ticking = false;
+const navH = () => nav.getBoundingClientRect().height;
+
+function centerChip(chip){
+  const r = chip.getBoundingClientRect(), rr = row.getBoundingClientRect();
+  const delta = (r.left + r.width/2) - (rr.left + rr.width/2);
+  if(Math.abs(delta) > 4) row.scrollBy({left: delta, behavior: 'smooth'});
 }
+function setActive(id){
+  if(id === activeId) return;
+  activeId = id;
+  let on = null;
+  row.querySelectorAll('a').forEach(a=>{ const m = a.dataset.id === id; a.classList.toggle('on', m); if(m) on = a; });
+  if(on) centerChip(on);
+}
+function updateActive(){
+  ticking = false;
+  if(Date.now() < lockUntil) return;
+  const line = navH() + 24;
+  let id = null;
+  document.querySelectorAll('section.cat').forEach(s=>{ if(s.getBoundingClientRect().top <= line) id = s.id; });
+  if(!id){ const f = document.querySelector('section.cat'); id = f && f.id; }
+  // בסוף העמוד – הקטגוריה האחרונה
+  if(window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4){
+    const all = document.querySelectorAll('section.cat'); id = all[all.length-1].id;
+  }
+  setActive(id);
+}
+window.addEventListener('scroll', ()=>{ if(!ticking){ ticking = true; requestAnimationFrame(updateActive); } }, {passive:true});
+window.addEventListener('resize', updateActive);
+
+row.addEventListener('click', e=>{
+  const a = e.target.closest('a'); if(!a) return;
+  e.preventDefault();
+  const sec = document.getElementById(a.dataset.id); if(!sec) return;
+  const y = sec.getBoundingClientRect().top + window.scrollY - navH() - 10;
+  lockUntil = Date.now() + 900;           // לא לשנות את ההדגשה בזמן הגלילה האוטומטית
+  setActive(a.dataset.id);
+  window.scrollTo({top: Math.max(0, y), behavior: 'smooth'});
+  setTimeout(()=>{ lockUntil = 0; updateActive(); }, 950);
+});
+function observe(){ activeId = null; updateActive(); }
 
 /* לייטבוקס */
 const lb = document.getElementById('lb');
